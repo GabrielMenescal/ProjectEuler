@@ -17,5 +17,3 @@ public class ProblemOne {
         System.out.println(sum);
     }
 }
-
-// OUTPUT: 233168
