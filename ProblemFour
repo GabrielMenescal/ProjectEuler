@@ -1,0 +1,38 @@
+/**
+ * Gabriel Menescal
+ *
+ * Problem 4:
+ *
+ * A palindromic number reads the same both ways. The largest palindrome made from the product
+ * of two 2-digit numbers is 9009 = 91 × 99. Find the largest palindrome made from the product
+ * of two 3-digit numbers.
+ */
+
+public class ProblemFour {
+    public static void main(String[] args) {
+        findPalindromicNum();
+    }
+    public static void findPalindromicNum() {
+        int num;
+        int palindrome = 0;
+        String number;
+        for(int i = 999; i > 0; i--) {
+            for(int j = i; j > 0; j--) {
+                num = i * j;
+                number = "" + num;
+                String reverse = "";
+                for(int k = number.length() - 1; k >= 0; k--) {
+                    reverse += number.charAt(k);
+                }
+                if(number.equals(reverse)) {
+                    if(num > palindrome) {
+                        palindrome = num;
+                    }
+                }
+            }
+        }
+        System.out.println(palindrome);
+    }
+}
+
+// OUTPUT: 906609
