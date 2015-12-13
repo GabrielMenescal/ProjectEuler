@@ -1,0 +1,38 @@
+/**
+ * Gabriel Menescal
+ *
+ * Problem 7:
+ *
+ * By listing the first six prime numbers: 2, 3, 5, 7, 11, and 13, we can
+ * see that the 6th prime is 13. What is the 10 001st prime number?
+ */
+
+public class ProblemSeven {
+    public static void main(String[] args) {
+        findPrimes(10001);
+    }
+
+    public static void findPrimes(int n) {
+        int upperBound = (int) (n * Math.log(n) + (n * (Math.log(Math.log(n)))));
+        int primeCount = 0;
+        for(int i = 2; i < upperBound; i++) {
+            if(isPrime(i)) {
+                primeCount++;
+                if(primeCount == n + 1) {
+                    System.out.println(i);
+                }
+            }
+        }
+    }
+
+    public static boolean isPrime(int n) {
+        for(int i = 2; i < n/2; i++) {
+            if(n % i == 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+}
+
+// OUTPUT: 104743
