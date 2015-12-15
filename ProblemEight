@@ -42,7 +42,7 @@ public class ProblemEight {
             number += output.nextLine();
         }
         int[] numList = new int[number.length()];
-        for(int i = 0; i < numList.length; i++) {
+        for (int i = 0; i < numList.length; i++) {
             String digit = ""+number.charAt(i);
             numList[i] = Integer.parseInt(digit);
         }
@@ -52,12 +52,12 @@ public class ProblemEight {
 
     public static long findLargestProduct(int[] numList) {
         long result = 0;
-        for(int i = 0; i < numList.length - 13; i++) {
+        for (int i = 0; i < numList.length - 13; i++) {
             long sum = 1;
-            for(int j = 0; j < 13; j++) {
+            for( int j = 0; j < 13; j++) {
                 sum *= numList[i + j];
             }
-            if(sum > result) {
+            if (sum > result) {
                 result = sum;
             }
         }
