@@ -15,10 +15,10 @@ public class ProblemSeven {
     public static void findPrimes(int n) {
         int upperBound = (int) (n * Math.log(n) + (n * (Math.log(Math.log(n)))));
         int primeCount = 0;
-        for(int i = 2; i < upperBound; i++) {
-            if(isPrime(i)) {
+        for (int i = 2; i < upperBound; i++) {
+            if (isPrime(i)) {
                 primeCount++;
-                if(primeCount == n + 1) {
+                if (primeCount == n + 1) {
                     System.out.println(i);
                 }
             }
@@ -26,8 +26,8 @@ public class ProblemSeven {
     }
 
     public static boolean isPrime(int n) {
-        for(int i = 2; i < n/2; i++) {
-            if(n % i == 0) {
+        for (int i = 2; i < n/2; i++) {
+            if (n % i == 0) {
                 return false;
             }
         }
